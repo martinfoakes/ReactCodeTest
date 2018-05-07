@@ -58,7 +58,7 @@ class ArtistListEntry extends Component {
         <div className='media-left media-middle'>
           <img src={ item.user.avatar_url } className='media-object artist-image' />
         </div>
-        <div className='media-body'>
+        <div className='media-body artist-details'>
           <ul className='artist-info-list'>
             <li className='media-heading'>{ item.user.username }</li>
             <li className='media-genre'>{ item.genre }</li>

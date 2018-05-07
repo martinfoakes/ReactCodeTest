@@ -18,7 +18,7 @@ class ArtistChild extends Component {
     return (
       <div id='track-box' className='media media-bottom' key={ item.id }>
         <div className="media-track-content">
-          <div className='media-left media-middle'>
+          <div className='media-left media-middle track-media'>
             <img src={ item.artwork_url } className='media-object track-image' />
           </div>
           <div className='media-body track-details'>

@@ -65,7 +65,6 @@ h3 {
   background-color: #dbdbdb;
 }
 
-
 .media-bottom {
   margin: 0px 20px 20px 20px!important;
   background-color: #fff;
@@ -190,7 +189,7 @@ ul {
       height:auto;
     }
 
-    .media-body {
+    .artist-details {
       font-size: 5vw;
       width: 100%;
       text-align: center;
@@ -199,9 +198,33 @@ ul {
       padding-right: 40px;
     }
 
+    .track-details {
+      font-size: 4vw;
+      width: 100%;
+      padding: 5px;
+      text-align: center;
+    }
+
     .artist-info-list {
       padding-left: 0px;
       padding-right: 0px;
+    }
+
+    .media-bottom {
+      margin: 0px 0px 0px 0px!important;
+    }
+
+    .track-list {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    .track-media {
+      display: none !important;
+    }
+
+    .track-image {
+      display: none !important;
     }
   }
 
