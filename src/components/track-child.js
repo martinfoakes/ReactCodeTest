@@ -4,39 +4,18 @@ import axios from 'axios';
 class ArtistChild extends Component {
   constructor(props) {
     super(props);
+  }
 
-    this.state= {
-      tracks: []
-    };
+  TrackListEntry() {
   }
 
   componentDidMount() {
     this.TrackListEntry();
   }
 
-  TrackListEntry() {
-    axios.get('https://api-v2.hearthis.at/feed/?type=popular&page=1&count=20')
-      .then(
-        ({ data }) => {
-          this.setState({
-            tracks: data
-          })
-        })
-        .catch((error) => {
-         if (error.response) {
-             console.log(error.response.status);
-             console.log(error.response.headers);
-         } else if (error.request) {
-             console.log(error.request);
-         } else {
-             console.log('Error', error.message);
-         }
-         console.log(error.config);
-     });
-  }
-
   render() {
-    let tracks = this.state.tracks.map((item) => (
+    let item = this.props.tracks
+    return (
       <div id='track-box' className='media media-bottom' key={ item.id }>
         <div className="media-track-content">
           <div className='media-left media-middle'>
@@ -54,7 +33,7 @@ class ArtistChild extends Component {
           </div>
         </div>
       </div>
-    ));
+    );
 
     return(
       <div id="layout-content" className="layout-content-wrapper">

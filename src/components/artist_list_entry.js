@@ -14,9 +14,15 @@ class ArtistListEntry extends Component {
  }
 
  toggleHidden (id) {
-    this.setState({
-      isVisible: id
-    })
+    if(this.state.isVisible === id){
+      this.setState({
+        isVisible: null
+      })
+    }else{
+      this.setState({
+        isVisible: id
+      })
+    }
   }
 
  componentDidMount() {
@@ -46,8 +52,9 @@ class ArtistListEntry extends Component {
 
  render() {
    let artists = this.state.artist.map((item) => (
-     <div>
-       <div className='media media-top' key={ item.user.id } onClick={this.toggleHidden.bind(this, item.id)}>
+     <div className="unselectable">
+      <div className='media media-top' key={ item.user.id }
+              onClick={this.toggleHidden.bind(this, item.id)}>
         <div className='media-left media-middle'>
           <img src={ item.user.avatar_url } className='media-object artist-image' />
         </div>
@@ -59,7 +66,7 @@ class ArtistListEntry extends Component {
           </ul>
         </div>
       </div>
-      {this.state.isVisible === item.id  && <ArtistChild />}
+      {this.state.isVisible === item.id  && <ArtistChild tracks={ item } />}
     </div>
   ));
 
